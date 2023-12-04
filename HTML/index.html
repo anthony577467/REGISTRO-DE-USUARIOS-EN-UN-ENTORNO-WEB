@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+    <h1>Registro de Estudiantes</h1>
+    <form action="/enviarDatos" method="post" onsubmit="return validarFormulario()">
+        <label for="carrera">Elección de Carrera:</label>
+        <select id="carrera" name="carrera">
+            <option value="analisis_sistemas">Análisis de Sistemas</option>
+            <option value="produccion_agraria">Producción Agraria</option>
+        </select><br>
+
+        <label for="apellidos_nombres">Apellidos y Nombres:</label>
+        <input type="text" id="apellidos_nombres" name="apellidos_nombres" required><br>
+
+        <label for="dni">Número de DNI:</label>
+        <input type="text" id="dni" name="dni" pattern="\d{8}" required><br>
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="dd/mm/aaaa" required><br>
+
+        <label for="correo">Correo Institucional:</label>
+        <input type="email" id="correo" name="correo" pattern="[a-zA-Z0-9._%+-]+@vallegrande\.edu\.pe$" required><br>
+        
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required>
+        <input type="checkbox" onclick="mostrarContrasena()"> Mostrar Contraseña<br>
+
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos">Aceptar los Términos y Condiciones</label><br>
+        
+        <input  type="submit" value="Registrarse">
+    </form>
+
+    <script src="/JS/scrip.js"></script>
+</body>
+</html>
